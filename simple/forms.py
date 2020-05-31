@@ -6,7 +6,7 @@ class BMRForm(forms.ModelForm):
         model  = bmrtable
         fields = ('age','weight','height','gender')
 
-class BMRForm(forms.ModelForm):
+class METForm(forms.ModelForm):
     class Meta :
         model  = mettable
         fields = ('activity','level','hours','minutes')

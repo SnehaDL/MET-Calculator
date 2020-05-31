@@ -73,7 +73,8 @@ TEMPLATES = [
 ]
 
 TEMPLATE_DIRS = (
-                '/home/ubuntu/work/met/calculator/templates',
+                '/home/ubuntu/work/MET-Calculator/met/calculator/templates',
+                '/home/ubuntu/work/MET-Calculator/met/simple//templates',
                 )
 
 # Custom template context processor setting

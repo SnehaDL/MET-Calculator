@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import BMRForm
+from .forms import BMRForm, METForm
 # Create your views here.
 
 
@@ -27,7 +27,7 @@ def BMR(request):
             return render (request , 'bmr_report.html', {'bmr':mybmr })
     else:
         form = BMRForm()
-    return render (request , 'bmr.html' , {'form': form})
+    return render (request , 'simple_bmr.html' , {'form': form})
 
 def MET(request):
     if request.method == "POST":
@@ -37,8 +37,8 @@ def MET(request):
             level = form.cleaned_data['level']
             hours = form.cleaned_data['hours']
             minutes = form.cleaned_data['minutes']
-            mybmr  = metvalue(act, level, hours, minutes)
-            return render (request , 'met_report.html', {'bmr':mybmr })
+            mymet  = metvalue(act, level, hours, minutes)
+            return render (request , 'met_report.html', {'met':mymet })
     else:
         form = METForm()
-    return render (request , 'met.html' , {'form': form})
+    return render (request , 'simple_met.html' , {'form': form})
