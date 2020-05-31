@@ -1,10 +1,35 @@
 <!DOCTYPE html>
+{% load bootstrap4 %}
 <html>
 <head>
-	<title>Your MET is {{ met }}</title>
+        <title>MET Calculator</title>
+{% load static %}
+<style type="text/css">
+        body {
+
+          background-size: cover;
+          background-image: url({% static "images/met.jpg" %});
+        }
+
+        .heading {
+            color: white;
+            font-family: 'Sedgwick Ave Display', cursive;
+            font-size: 10vw;
+            letter-spacing: 20px;
+            color: rgb(0, 255, 170);
+            padding-top: 200px;
+            font-family: 'Cabin Sketch', cursive;
+        }
+</style>
+
+<div class="splash"></div><br/><br/>
+<h1 class="first-class" align="center">MET Calculator Report</h1>
+<br/><br/>
+
 </head>
+
 <body>
-	<h1>Your MET is {{ met }} METs </h1>
-	<a href="{% url 'bmr' %}">Go back</a>
+	<h1 align="center">Your MET is {{ met }} METs </h1>
+	<a align="center" href="{% url 'bmr' %}">Go back</a>
 </body>
 </html>

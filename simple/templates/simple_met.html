@@ -3,14 +3,50 @@
 <html>
 <head>
 	<title>MET Calculator</title>
+{% load static %}
+<style type="text/css">
+        body {
+  
+    	  background-size: cover;
+          background-image: url({% static "images/met.jpg" %});
+        }
+
+        .heading {
+            color: white;
+            font-family: 'Sedgwick Ave Display', cursive;
+            font-size: 10vw;
+            letter-spacing: 20px;
+            color: rgb(0, 255, 170);
+            padding-top: 200px;
+            font-family: 'Cabin Sketch', cursive;
+        }
+</style>
+
+<div class="splash"></div><br/><br/>
+<h1 class="first-class" align="center">MET Calculator</h1>
+<br/><br/>
+<h2 class="first-class" align="center">Enter the Following Details</h2>
 </head>
+
 <body>
-	<h1>Enter the Following for MET Calculator</h1>
-	<form action="." method="POST">
-		{% csrf_token %}
-		{% bootstrap_form form %}
-		<button type="submit">Submit</button>
-	</form>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 form-page mb-3">
+            <form action="." align="center" method="POST">
+                {% csrf_token %}
+                <div class="fieldWrapper form-group" aria-required="true">
+                	{% bootstrap_form form %}    
+                </div>
+        	<span/>
+			<br/>
+			<input type="submit" class="btn btn-primary mb-2" value="Submit" />
+            </form>
+        </div>
+	<div class="col-md-4">
+		<!-- other column -->
+	</div>
+</div>
 
 </body>
 </html>
