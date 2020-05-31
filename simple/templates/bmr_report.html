@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>BMR Calculator</title>
-{% load static %}
+<div class="page-header">
+    <h1 align="center">BMR Report</h1>
+    <button><a align="center" href="{% url 'bmr' %}">Go back</a></button>
+</div>
+	{% load static %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<title>BMR Calculator</title>
 <style type="text/css">
         body {
-
           background-size: cover;
-          background-image: url({% static "images/met.jpg" %});
-        }
-
-        .heading {
-            color: white;
-            font-family: 'Sedgwick Ave Display', cursive;
-            font-size: 10vw;
-            letter-spacing: 20px;
-            color: rgb(0, 255, 170);
-            padding-top: 200px;
-            font-family: 'Cabin Sketch', cursive;
+          background-image: url({% static "images/bmr2.jpg" %});
         }
 </style>
 
-<div class="splash"></div><br/><br/>
-<h1 class="first-class" align="center">BMR Calculator Report</h1>
-<br/><br/>
-
+<div class="splash"></div>
 </head>
 
 <body>
-	<h1 align="center">Your Bmr is {{ bmr }} Calories </h1>
-	<a align="center" href="{% url 'bmr' %}">Go back</a>
+	<h1 align="center">Your BMR (Basal metabolic rate): {{ bmr }} Cals</h1>
+	<h1 align="center">Following is Obesity Type matching your BMR </h1>
+	<h1 align="center">Underweight = <18.5 </h1>
+	<h1 align="center">Normal Weight = 18.5-24.9 </h1>
+	<h1 align="center">Overweight = 25-29.9 </h1>
+	<h1 align="center">Obese = > 30 </h1>
 </body>
 </html>

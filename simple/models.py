@@ -11,8 +11,8 @@ class bmrtable(models.Model):
             ('f', 'Female')
 	)
     age    = models.IntegerField()
-    height = models.IntegerField()
-    weight = models.IntegerField()
+    height = models.DecimalField(max_digits=4, decimal_places=2)
+    weight = models.DecimalField(max_digits=5, decimal_places=2)
     gender = models.CharField(max_length=1 , choices=gender_choices,)
 
 class mettable(models.Model):
@@ -23,9 +23,9 @@ class mettable(models.Model):
             ('2.0', 'walking'),
         )
     level_choices = (
-            ('l' , "Light"),
-            ('m', 'Moderate'),
-            ('v', "Vigorous"),
+            ('1' , "Light"),
+            ('2', 'Moderate'),
+            ('3', "Vigorous"),
         )
     activity = models.CharField(max_length=10 , choices=activity_choices,)
     level = models.CharField(max_length=1 , choices=level_choices,)

@@ -2,35 +2,30 @@
 {% load bootstrap4 %}
 <html>
 <head>
+<div class="page-header">
+    <h1 align="center">BMR Calculator</h1>
+</div>
 	<title>Base Metabolic Rate Calculator</title>
 {% load static %}
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 <style type="text/css">
         body {
           background-image: url({% static "images/bmr2.jpg" %});
           background-size: cover;
         }
 
-        .heading {
-            color: white;
-            font-family: 'Sedgwick Ave Display', cursive;
-            font-size: 10vw;
-            letter-spacing: 20px;
-            color: rgb(0, 255, 170);
-            padding-top: 200px;
-            font-family: 'Cabin Sketch', cursive;
-        }
 </style>
 
 <div class="splash"></div>
 </head>
 <body>
-	<h1 align="center">Enter the Following for BMR Calculator</h1>
-	<form action="." align="center" method="POST">
+	<form action="." align="centre"  method="POST">
 		{% csrf_token %}
 		{% bootstrap_form form %}
-		
-		<button type="submit">Submit</button>
+		<button align="centre" type="submit">Submit</button>
 	</form>
-
 </body>
 </html>

@@ -12,8 +12,9 @@ def bmrvalue(age ,height ,weight , gender ):
 
 
 def metvalue(act, level, hours, minutes):
-    met = act * hours * minutes
-    return met
+    met = act * level * (hours*60) * minutes
+    return float(met)
+
 
 def BMR(request):
     if request.method == "POST":
@@ -23,7 +24,7 @@ def BMR(request):
             height = form.cleaned_data['height']
             weight = form.cleaned_data['weight']
             gender = form.cleaned_data['gender']
-            mybmr  = bmrvalue(age,height,weight,gender)
+            mybmr  = bmrvalue(age,float(height),float(weight),gender)
             return render (request , 'bmr_report.html', {'bmr':mybmr })
     else:
         form = BMRForm()
@@ -37,7 +38,7 @@ def MET(request):
             level = form.cleaned_data['level']
             hours = form.cleaned_data['hours']
             minutes = form.cleaned_data['minutes']
-            mymet  = metvalue(act, level, hours, minutes)
+            mymet  = metvalue(float(act), int(level), int(hours), int(minutes))
             return render (request , 'met_report.html', {'met':mymet })
     else:
         form = METForm()

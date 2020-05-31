@@ -2,51 +2,34 @@
 {% load bootstrap4 %}
 <html>
 <head>
+<div class="page-header">
+    <h2 align="center">MET Calculator</h2>
+</div>
 	<title>MET Calculator</title>
 {% load static %}
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
 <style type="text/css">
         body {
   
     	  background-size: cover;
-          background-image: url({% static "images/met.jpg" %});
+          background-image: url({% static "images/met2.jpg" %});
         }
 
-        .heading {
-            color: white;
-            font-family: 'Sedgwick Ave Display', cursive;
-            font-size: 10vw;
-            letter-spacing: 20px;
-            color: rgb(0, 255, 170);
-            padding-top: 200px;
-            font-family: 'Cabin Sketch', cursive;
-        }
 </style>
 
 <div class="splash"></div><br/><br/>
-<h1 class="first-class" align="center">MET Calculator</h1>
-<br/><br/>
-<h2 class="first-class" align="center">Enter the Following Details</h2>
 </head>
 
 <body>
 <br/>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 form-page mb-3">
-            <form action="." align="center" method="POST">
+<form action="." align="centre"  method="POST">
                 {% csrf_token %}
-                <div class="fieldWrapper form-group" aria-required="true">
-                	{% bootstrap_form form %}    
-                </div>
-        	<span/>
-			<br/>
-			<input type="submit" class="btn btn-primary mb-2" value="Submit" />
-            </form>
-        </div>
-	<div class="col-md-4">
-		<!-- other column -->
-	</div>
-</div>
-
+                {% bootstrap_form form %}
+                <button align="centre" type="submit">Submit</button>
+        </form>
 </body>
 </html>

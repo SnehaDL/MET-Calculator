@@ -2,34 +2,34 @@
 {% load bootstrap4 %}
 <html>
 <head>
-        <title>MET Calculator</title>
+	<div class="page-header">
+    <h2 align="center">MET Report</h2>
+    <button><a align="center" href="{% url 'met' %}">Go back</a></button>
+</div>
+	<title>MET Report</title>
 {% load static %}
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
 <style type="text/css">
         body {
 
           background-size: cover;
-          background-image: url({% static "images/met.jpg" %});
+          background-image: url({% static "images/met2.jpg" %});
         }
 
-        .heading {
-            color: white;
-            font-family: 'Sedgwick Ave Display', cursive;
-            font-size: 10vw;
-            letter-spacing: 20px;
-            color: rgb(0, 255, 170);
-            padding-top: 200px;
-            font-family: 'Cabin Sketch', cursive;
-        }
 </style>
 
-<div class="splash"></div><br/><br/>
-<h1 class="first-class" align="center">MET Calculator Report</h1>
-<br/><br/>
+<div class="splash"></div>
 
 </head>
 
 <body>
 	<h1 align="center">Your MET is {{ met }} METs </h1>
-	<a align="center" href="{% url 'bmr' %}">Go back</a>
+	<h1 align="center">Following is recommendation for MET </h1>
+	<h1 align="center">Total MET per week (general): 600-1200 </h1>
+        <h1 align="center">Total MET per week (individual) : 2500</h1>
 </body>
 </html>
