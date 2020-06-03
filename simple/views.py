@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import BMRForm, METForm
 # Create your views here.
-
+from .models import mettable
 
 def bmrvalue(age ,height ,weight , gender ):
     if gender == 'm':
@@ -43,3 +43,8 @@ def MET(request):
     else:
         form = METForm()
     return render (request , 'simple_met.html' , {'form': form})
+
+def calc(request):
+    allact= mettable.objects.all()
+    context= {'allactivities': allact}
+    return render (request , 'met_table.html' , context)

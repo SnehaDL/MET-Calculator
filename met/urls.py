@@ -31,6 +31,7 @@ from simple import views as sv
 urlpatterns = [
     path('bmr/', sv.BMR , name="bmr"),
     path('met/', sv.MET , name="met"),
+    path('calculator/', sv.calc , name="calculator"),
     path('bmr_crispy/', views.METFormView.as_view(), name='bmr_crispy'),
     path('met_crispy/', views.METFormView.as_view(), name='met_crispy'),
     path('success/', views.SuccessView.as_view(), name='success'),

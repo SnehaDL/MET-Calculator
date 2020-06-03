@@ -17,10 +17,15 @@ class bmrtable(models.Model):
 
 class mettable(models.Model):
     activity_choices = (
-            ('0.95' , "Sleeping"),
-            ('1.0', 'watching_tv'),
-            ('1.3', 'writing_or_typing'),
-            ('2.0', 'walking'),
+            ('7.5' , "cycling"),
+            ('14', 'cycling up hill'),
+            ('6', 'jogging'),
+            ('6', 'running'),
+            ('8', 'housework'),
+            ('4', 'skipping'),
+            ('11', 'walkingstairs'),
+            ('5', 'pilates'),
+            ('3', 'weight'),
         )
     level_choices = (
             ('1' , "Light"),

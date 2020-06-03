@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+<html>
+<head>
+<div class="page-header">
+    <h2 align="center">MET Calculator</h2>
+</div>
+	<title>MET Calculator</title>
+{% load static %}
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+<style type="text/css">
+        body {
+    	  background-size: cover;
+          background-image: url({% static "images/met2.jpg" %});
+        }
+
+	table, td {
+  border: 1px solid black;
+}
+</style>
+
+<div class="splash"></div><br/><br/>
+</head>
+
+<body>
+<script type="text/javascript" href="{% static 'js/table.js' %}"></script>
+<p>Please enter the activites performed on Daily basis.</p>
+
+<table id="myTable">
+<thead>
+    <tr>
+        <th>Activity</th>
+        <th>Level</th>
+        <th>Hours</th>
+	<th>Minutes</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for activity in allactivites %}
+    <tr>
+        <td>
+		<select name="activity" id="act">
+  		<option value="cycling">{{ activity.cycling }}</option>
+  		<option value="jogging">{{ activity.jogging }}</option>
+  		<option value="running">{{ activity.running }}</option>
+  		<option value="housework">{{ activity.housework }}</option>
+		<option value="skipping">{{ activity.skipping }}</option>
+                <option value="walking up stairs">{{ activity.walkingupstairs }}</option>
+		<option value="pilates">{{ activity.pilates }}</option>
+		<option value="weight">{{ activity.weight }}</option>
+		</select>
+	</td>
+        <td>
+		<select name="level" id="lev">
+  		<option value="light">Light</option>
+  		<option value="moderate">Moderate</option>
+  		<option value="heavy">Heavy</option>
+		</select></td>	
+        <td><input type="text" name="Job Title" /></td>
+	<td><input type="text" name="Job Title" /></td>
+    </tr>
+    </tbody>
+  </tr>
+  {% endfor %}
+</table>
+<br>
+
+<button type="button" onclick="myFunction()">Try it</button>
+<script>
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);	
+  cell1.innerHTML = '<select name="activity" id="act"><option value="cycling">Cycling</option><option value="jogging">Jogging</option><option value="running">Running</option><option value="housework">Housework</option><option value="skipping">Skipping</option><option value="walking up stairs">Walking</option><option value="pilates">Pilates</option><option value="weight">Weight-Training</option></select>';
+  cell2.innerHTML = '<select name="level" id="lev"><option value="light">Light</option><option value="moderate">Moderate</option><option value="heavy">Heavy</option></select>';
+  cell3.innerHTML = '<input type="text" name="Job Title" />';
+  cell4.innerHTML = '<input type="text" name="Job Title" />';
+}
+</script>
+</body>
+</html>
