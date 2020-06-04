@@ -70,7 +70,7 @@ def calc(request):
             return render (request , 'met_report.html', {'met':float(sumation), 'weekmet':float(weeksum), 'remmet':float(remmet)})
         else:
             pdb.set_trace()
-            return render (request , 'met_report.html', {'met':1 })
+            return render (request , 'error_met.html')
     allact= mettable.objects.all()    
     context= {'allactivities': allact}
     return render (request , 'met_table.html' , context)

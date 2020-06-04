@@ -45,10 +45,10 @@
 	<select name="activity" id="activity"><option type="number" value="7.5">cycling</option><option type="number" value="6">jogging</option><option type="number" value="8">running</option><option type="number" value="4">housing</option><option type="number" value="11">skipping</option><option type="number" value="5">walking</option><option type="number" value="3">pilates</option><option type="number" value="5">weights</option></select>
 	</td>
         <td>
-		<select name="level" id="level"><option int="number" value="0.01">light</option><option int="number" value="0.02">moderate</option><option int="number" value="0.03">level.heavy</option></select>
+	<select name="level" id="level"><option int="number" value="0.01">light</option><option int="number" value="0.02">moderate</option><option int="number" value="0.03">level.heavy</option></select>
 	</td>	
-        <td><input type="number" name="hours" id="hours" min="1"/></td>
-	<td><input type="number" name="minutes" id="minutes" min="1"/></td>
+        <td><input type="number" name="hours" id="hours" min="1" required="required"/></td>
+	<td><input type="number" name="minutes" id="minutes" min="1" required="required"/></td>
    </tr>
     </tbody>
   </tr>
@@ -58,7 +58,6 @@
 <button align="centre" type="submit">Calculate MET</button>
 </form>
 <br>
-
 <script>
 function myFunction() {
   var table = document.getElementById("myTable");
@@ -69,8 +68,8 @@ function myFunction() {
   var cell4 = row.insertCell(3);
 	cell1.innerHTML = '<select name="activity" id="activity"><option type="number" value="7.5">cycling</option><option type="number" value="6">jogging</option><option type="number" value="8">running</option><option type="number" value="4">housing</option><option type="number" value="11">skipping</option><option type="number" value="5">walking</option><option type="number" value="3">pilates</option><option type="number" value="5">weights</option></select>';
   cell2.innerHTML = '<select name="level" id="level"><option int="number" value="0.01">light</option><option int="number" value="0.02">moderate</option><option int="number" value="0.03">level.heavy</option></select>';
-  cell3.innerHTML = '<input type="number" name="hours" id="hours" min="1"/>';
-  cell4.innerHTML = '<input type="number" name="minutes" id="minutes" min="1"/>';
+  cell3.innerHTML = '<input type="number" name="hours" id="hours"  required="required" min="1"/>';
+  cell4.innerHTML = '<input type="number" name="minutes" id="minutes" min="1" required="required"/>';
 }
 </script>
 </body>
