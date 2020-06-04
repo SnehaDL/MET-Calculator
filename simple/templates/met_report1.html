@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+<html>
+<head>
+	<div class="page-header">
+    <h2 align="center">MET Report</h2>
+    <button><a align="center" href="{% url 'met' %}">Go back</a></button>
+</div>
+	<title>MET Report</title>
+{% load static %}
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+<style type="text/css">
+        body {
+          background-size: cover;
+          background-image: url({% static "images/met2.jpg" %});
+        }
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: centre;
+  background-color: brown;
+  color: white;
+}
+
+#report{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+<div class="splash"></div>
+</head>
+
+<body>
+<div id="report">
+	<p align="center">Total MET Today: {{ met }} METs</p>
+<p align="center">Following is recommendation for MET </p>
+<p align="center">Total MET per week (general): 600-1200, Total MET per week (individual) : 2500</p>
+	</div>
+<table id="customers" cellspacing="0">
+	<thead>
+    <tr>
+        <th>Activity</th>
+        <th>MET</th>
+        <th>Calculation</th>
+        <th>Total MET</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Running</td>
+        <td>8 METS</td>
+        <td>2 * 30 MINS = 60 MINS * 8 METS</td>
+        <td>480 METS</td>
+   </tr>
+   <tr>
+        <td>Brisk Walking</td>
+        <td>6 METS</td>
+        <td>14 * 15 mins = 210 mins * 6 METS</td>
+        <td>1260 METS</td>
+   </tr>
+   <tr>
+        <td>Weight Training</td>
+        <td>5 METS</td>
+        <td>2 * 30 mins = 60 mins * 5 METS</td>
+	<td>300 METS</td>
+   </tr>
+   <tr>
+        <td>Gardening</td>
+        <td>4 METS</td>
+        <td>4 hoursperweek = 240 mins * 4 METS</td>
+        <td>960 METS</td>
+   </tr>
+   <tr>
+        <td>Dancing</td>
+        <td>8 METS</td>
+        <td>1 hour = 60 mins * 8 METS</td>
+        <td>480 METS</td>
+   </tr>
+   <tr>
+        <td>Team Sports</td>
+        <td>7 METS</td>
+        <td>1 hour = 60 mins * 7 METS</td>
+        <td>520 METS</td>
+   </tr>
+   <tr>
+        <td></td>
+        <td></td>
+        <td>Total</td>
+	<td><button value="3900">3900 METS</button></td>
+   </tr>
+    </tbody>
+  </tr>
+</table>
+</body>
+</html>

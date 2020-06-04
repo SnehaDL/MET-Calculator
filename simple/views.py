@@ -38,10 +38,10 @@ def MET(request):
             level = form.cleaned_data['level']
             hours = form.cleaned_data['hours']
             minutes = form.cleaned_data['minutes']
-            mymet  = metvalue(float(act), int(level), int(hours), int(minutes))
-            return render (request , 'met_report.html', {'met':mymet })
+            mymet  = metvalue(float(act), float(level), int(hours), int(minutes))
+            return render (request , 'met_report1.html', {'met':mymet })
         else:
-            return render (request , 'met_report.html', {'met': ERROR })
+            return render (request , 'met_report1.html', {'met': ERROR })
     else:
         form = METForm()
     return render (request , 'simple_met.html' , {'form': form})

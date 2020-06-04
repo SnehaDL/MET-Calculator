@@ -343,3 +343,23 @@ Watching for file changes with StatReloader
 [04/Jun/2020 16:56:39] "POST /calculator/ HTTP/1.1" 200 2877
 [04/Jun/2020 16:56:42] "GET /calculator/ HTTP/1.1" 200 3286
 [04/Jun/2020 16:56:48] "POST /calculator/ HTTP/1.1" 200 2877
+[04/Jun/2020 16:58:56] "GET /met/ HTTP/1.1" 200 2154
+Internal Server Error: /met/
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/work/MET-Calculator/simple/views.py", line 41, in MET
+    mymet  = metvalue(float(act), int(level), int(hours), int(minutes))
+ValueError: invalid literal for int() with base 10: '0.01'
+[04/Jun/2020 16:59:11] "POST /met/ HTTP/1.1" 500 67674
+[04/Jun/2020 16:59:37] "GET /bmr/ HTTP/1.1" 200 1671
+[04/Jun/2020 16:59:38] "GET /static/css/style.css HTTP/1.1" 304 0
+[04/Jun/2020 17:02:00] "GET /bmr/ HTTP/1.1" 200 1671
+[04/Jun/2020 17:02:00] "GET /met/ HTTP/1.1" 200 2154
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+[04/Jun/2020 17:06:06] "GET /bmr/ HTTP/1.1" 200 1671
