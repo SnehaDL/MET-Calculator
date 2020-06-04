@@ -29,19 +29,17 @@
 <form align="center" action = "" method = "post">
     {% csrf_token %}
 <h1>Enter your details below</h1>
-Age:<input type="number" name="age" id="age" min="1" required="required"/>
-Gender:<select name="gender" id="gender">
-        <option type="text" value="m">male</option>
-        <option type="text" value="f">female</option>
+<input type="number" name="age" id="age" min="1" required="required"/>
+<input type="number" name="weight" id="weight" min="1" required="required"/>
+<input type="number" name="height" id="height" min="1" required="required"/>
+<select name="gender" id="gender">
+	<option type="text" value="male">male</option>
+	<option type="text" value="female">female</option>
 </select>
-<br/>
-</br/>
-Weight(in pounds):<input type="number" name="weight" id="weight" min="1" required="required"/>
-Height(in inches):<input type="number" name="height" id="height" min="1" required="required"/>
 
 <h1>Enter activites performed on Daily Basis</h1>
 <br/>
-<table align="centre" id="myTable">
+<table id="myTable">
 	<thead>
     <tr>
         <th>Activity</th>

@@ -54,13 +54,23 @@ def MET(request):
 def calc(request):
     if request.method == "POST":
         form = METForm(request.POST)
+        age = request.POST.get("age")
+        height = request.POST.get("height")
+        weight = request.POST.get("weight")
+        gender = request.POST.get("gender")
+        mybmr  = bmrvalue(int(age),float(height),float(weight),gender)
+
         act_dict = {}
+
         for (key,value) in request.POST.lists():
             act_dict[key]=value
         if len(act_dict) > 1:
             count = len(act_dict['activity'])
             sumation = 0
             weeksum = 0
+            cals = 0
+            tothours = 0
+            totmins = 0
             for value in range(count):
                 print(float(act_dict['activity'][value]), float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
                 mymet = metvalue(float(act_dict['activity'][value]), float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
@@ -68,11 +78,16 @@ def calc(request):
                 sumation += mymet
                 print(sumation)
                 weeksum = sumation*7
+                tothours += int(act_dict['hours'][value])
+                totmins += int(act_dict['minutes'][value])
                 if weeksum <= 2500:
                     remmet = 2500 - weeksum
                 else:
                     remmet = 0
-            return render (request , 'met_report.html', {'met':float(sumation), 'weekmet':float(weeksum), 'remmet':float(remmet)})
+
+            cals = float(sumation) * int(weight) * float(tothours + (totmins/60))
+            
+            return render (request , 'met_report.html', {'met':float(sumation), 'cals':int(cals), 'bmr':int(mybmr), 'weekmet':float(weeksum), 'remmet':float(remmet)})
         else:
             pdb.set_trace()
             return render (request , 'error_met.html')
