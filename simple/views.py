@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import BMRForm, METForm
 # Create your views here.
 from .models import mettable
+import pdb
 
 def bmrvalue(age ,height ,weight , gender ):
     if gender == 'm':
@@ -12,9 +13,8 @@ def bmrvalue(age ,height ,weight , gender ):
 
 
 def metvalue(act, level, hours, minutes):
-    met = act * level * (hours*60) * minutes
-    return float(met)
-
+    met = act * 1 * hours * minutes
+    return int(met)
 
 def BMR(request):
     if request.method == "POST":
@@ -40,11 +40,37 @@ def MET(request):
             minutes = form.cleaned_data['minutes']
             mymet  = metvalue(float(act), int(level), int(hours), int(minutes))
             return render (request , 'met_report.html', {'met':mymet })
+        else:
+            return render (request , 'met_report.html', {'met': ERROR })
     else:
         form = METForm()
     return render (request , 'simple_met.html' , {'form': form})
 
 def calc(request):
-    allact= mettable.objects.all()
+    if request.method == "POST":
+        form = METForm(request.POST)
+        act_dict = {}
+        for (key,value) in request.POST.lists():
+            act_dict[key]=value
+        if len(act_dict) > 1:
+            count = len(act_dict['activity'])
+            sumation = 0
+            weeksum = 0
+            for value in range(count):
+                print(float(act_dict['activity'][value]), float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
+                mymet = metvalue(float(act_dict['activity'][value]), float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
+                print(mymet)
+                sumation += mymet
+                print(sumation)
+                weeksum = sumation*7
+                if weeksum <= 2500:
+                    remmet = 2500 - weeksum
+                else:
+                    remmet = 0
+            return render (request , 'met_report.html', {'met':float(sumation), 'weekmet':float(weeksum), 'remmet':float(remmet)})
+        else:
+            pdb.set_trace()
+            return render (request , 'met_report.html', {'met':1 })
+    allact= mettable.objects.all()    
     context= {'allactivities': allact}
     return render (request , 'met_table.html' , context)

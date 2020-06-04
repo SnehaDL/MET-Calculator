@@ -21,16 +21,17 @@
   border: 1px solid black;
 }
 </style>
-
 <div class="splash"></div><br/><br/>
 </head>
 
 <body>
 <script type="text/javascript" href="{% static 'js/table.js' %}"></script>
-<p>Please enter the activites performed on Daily basis.</p>
-
+<form align="center" action = "" method = "post">
+    {% csrf_token %}
+<h1>Enter activites performed on Daily Basis</h1>
+<br/>
 <table id="myTable">
-<thead>
+	<thead>
     <tr>
         <th>Activity</th>
         <th>Level</th>
@@ -39,36 +40,25 @@
     </tr>
     </thead>
     <tbody>
-{% for activity in allactivites %}
     <tr>
         <td>
-		<select name="activity" id="act">
-  		<option value="cycling">{{ activity.cycling }}</option>
-  		<option value="jogging">{{ activity.jogging }}</option>
-  		<option value="running">{{ activity.running }}</option>
-  		<option value="housework">{{ activity.housework }}</option>
-		<option value="skipping">{{ activity.skipping }}</option>
-                <option value="walking up stairs">{{ activity.walkingupstairs }}</option>
-		<option value="pilates">{{ activity.pilates }}</option>
-		<option value="weight">{{ activity.weight }}</option>
-		</select>
+	<select name="activity" id="activity"><option type="number" value="7.5">cycling</option><option type="number" value="6">jogging</option><option type="number" value="8">running</option><option type="number" value="4">housing</option><option type="number" value="11">skipping</option><option type="number" value="5">walking</option><option type="number" value="3">pilates</option><option type="number" value="5">weights</option></select>
 	</td>
         <td>
-		<select name="level" id="lev">
-  		<option value="light">Light</option>
-  		<option value="moderate">Moderate</option>
-  		<option value="heavy">Heavy</option>
-		</select></td>	
-        <td><input type="text" name="Job Title" /></td>
-	<td><input type="text" name="Job Title" /></td>
-    </tr>
+		<select name="level" id="level"><option int="number" value="0.01">light</option><option int="number" value="0.02">moderate</option><option int="number" value="0.03">level.heavy</option></select>
+	</td>	
+        <td><input type="number" name="hours" id="hours" min="1"/></td>
+	<td><input type="number" name="minutes" id="minutes" min="1"/></td>
+   </tr>
     </tbody>
   </tr>
-  {% endfor %}
 </table>
+<br/>
+<button type="button" onclick="myFunction()">Add Activiy</button>
+<button align="centre" type="submit">Calculate MET</button>
+</form>
 <br>
 
-<button type="button" onclick="myFunction()">Try it</button>
 <script>
 function myFunction() {
   var table = document.getElementById("myTable");
@@ -76,11 +66,11 @@ function myFunction() {
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);	
-  cell1.innerHTML = '<select name="activity" id="act"><option value="cycling">Cycling</option><option value="jogging">Jogging</option><option value="running">Running</option><option value="housework">Housework</option><option value="skipping">Skipping</option><option value="walking up stairs">Walking</option><option value="pilates">Pilates</option><option value="weight">Weight-Training</option></select>';
-  cell2.innerHTML = '<select name="level" id="lev"><option value="light">Light</option><option value="moderate">Moderate</option><option value="heavy">Heavy</option></select>';
-  cell3.innerHTML = '<input type="text" name="Job Title" />';
-  cell4.innerHTML = '<input type="text" name="Job Title" />';
+  var cell4 = row.insertCell(3);
+	cell1.innerHTML = '<select name="activity" id="activity"><option type="number" value="7.5">cycling</option><option type="number" value="6">jogging</option><option type="number" value="8">running</option><option type="number" value="4">housing</option><option type="number" value="11">skipping</option><option type="number" value="5">walking</option><option type="number" value="3">pilates</option><option type="number" value="5">weights</option></select>';
+  cell2.innerHTML = '<select name="level" id="level"><option int="number" value="0.01">light</option><option int="number" value="0.02">moderate</option><option int="number" value="0.03">level.heavy</option></select>';
+  cell3.innerHTML = '<input type="number" name="hours" id="hours" min="1"/>';
+  cell4.innerHTML = '<input type="number" name="minutes" id="minutes" min="1"/>';
 }
 </script>
 </body>

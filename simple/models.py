@@ -28,11 +28,11 @@ class mettable(models.Model):
             ('3', 'weight'),
         )
     level_choices = (
-            ('1' , "Light"),
-            ('2', 'Moderate'),
-            ('3', "Vigorous"),
+            ('0.01' , "Light"),
+            ('0.02', 'Moderate'),
+            ('0.03', "Vigorous"),
         )
-    activity = models.CharField(max_length=10 , choices=activity_choices,)
-    level = models.CharField(max_length=1 , choices=level_choices,)
+    activity = models.CharField(max_length=50 , choices=activity_choices,)
+    level = models.CharField(max_length=10 , choices=level_choices,)
     hours = models.IntegerField()
     minutes = models.IntegerField()
