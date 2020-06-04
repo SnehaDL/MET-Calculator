@@ -13,7 +13,12 @@ def bmrvalue(age ,height ,weight , gender ):
 
 
 def metvalue(act, level, hours, minutes):
-    met = act * 1 * hours * minutes
+    if hours == 0:
+        met = act * minutes
+    elif minutes == 0:
+        met = act * hours
+    else:
+        met = act * 1 * hours * minutes
     return int(met)
 
 def BMR(request):

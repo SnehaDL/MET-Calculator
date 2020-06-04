@@ -363,3 +363,74 @@ ValueError: invalid literal for int() with base 10: '0.01'
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 [04/Jun/2020 17:06:06] "GET /bmr/ HTTP/1.1" 200 1671
+Watching for file changes with StatReloader
+[04/Jun/2020 17:14:57] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 17:15:15] "POST /calculator/ HTTP/1.1" 200 2879
+[04/Jun/2020 17:15:20] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 17:21:29] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 17:22:27] "POST /calculator/ HTTP/1.1" 200 2878
+[04/Jun/2020 17:22:55] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 17:22:57] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 17:22:59] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 17:35:02] "GET /met/ HTTP/1.1" 200 2154
+[04/Jun/2020 17:35:02] "GET /bmr/ HTTP/1.1" 200 1671
+Not Found: /favicon.ico
+[04/Jun/2020 17:35:02] "GET /favicon.ico HTTP/1.1" 404 2614
+Not Found: /favicon.ico
+[04/Jun/2020 17:35:02] "GET /favicon.ico HTTP/1.1" 404 2614
+[04/Jun/2020 17:38:35] "GET /met/ HTTP/1.1" 200 2154
+Not Found: /favicon.ico
+[04/Jun/2020 17:38:35] "GET /favicon.ico HTTP/1.1" 404 2614
+[04/Jun/2020 18:10:33] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 18:10:33] "GET /static/css/style2.css HTTP/1.1" 200 1025
+[04/Jun/2020 18:10:34] "GET /static/images/met2.jpg HTTP/1.1" 200 157171
+[04/Jun/2020 18:11:28] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 18:11:29] "GET /static/css/style2.css HTTP/1.1" 200 1025
+[04/Jun/2020 18:14:28] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 18:14:29] "GET /static/css/style2.css HTTP/1.1" 200 1025
+[04/Jun/2020 18:14:30] "GET /static/images/met2.jpg HTTP/1.1" 200 157171
+Not Found: /favicon.ico
+[04/Jun/2020 18:14:31] "GET /favicon.ico HTTP/1.1" 404 2614
+[04/Jun/2020 18:14:39] "GET /bmr/ HTTP/1.1" 200 1671
+[04/Jun/2020 18:17:57] "POST /calculator/ HTTP/1.1" 200 2878
+[04/Jun/2020 18:19:58] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 18:20:12] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 18:20:12] "POST /calculator/ HTTP/1.1" 200 2879
+[04/Jun/2020 18:20:28] "GET /calculator/ HTTP/1.1" 200 3286
+[04/Jun/2020 18:23:56] "POST /calculator/ HTTP/1.1" 200 2878
+/home/ubuntu/work/MET-Calculator/simple/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 4 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth.
+Run 'python manage.py migrate' to apply them.
+June 04, 2020 - 17:14:49
+Django version 3.0.6, using settings 'met.settings'
+Starting development server at http://0.0.0.0:5000/
+Quit the server with CONTROL-C.
+7.5 0.01 2 3
+45
+45
+6.0 0.03 3 4
+72
+117
+7.5 0.01 5 6
+225
+342
+7.5 0.01 3 4
+90
+90
+7.5 0.01 2 3
+45
+45
+7.5 0.01 2 3
+45
+45
+7.5 0.02 3 4
+90
+135
+3.0 0.02 1 30
+90
+90
+Watching for file changes with StatReloader
