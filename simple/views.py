@@ -71,10 +71,16 @@ def calc(request):
             cals = 0
             tothours = 0
             totmins = 0
+            indiv = []
+            total_cals = 0
             for value in range(count):
-                print(float(act_dict['activity'][value]), float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
-                mymet = metvalue(float(act_dict['activity'][value]), float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
+                print(act_dict['activity'][value], float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
+                mymet = metvalue(float(act_dict['activity'][value].split('|')[1]), float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
                 print(mymet)
+                indiv_cals = float(mymet) * int(weight) * float(int(act_dict['hours'][value]) + (int(act_dict['minutes'][value])/60))
+                total_cals += indiv_cals
+                indivl= [act_dict['activity'][value].split('|')[0],int(act_dict['hours'][value]),int(act_dict['minutes'][value]),float(mymet),indiv_cals]
+                indiv.append(indivl)
                 sumation += mymet
                 print(sumation)
                 weeksum = sumation*7
@@ -84,10 +90,7 @@ def calc(request):
                     remmet = 2500 - weeksum
                 else:
                     remmet = 0
-
-            cals = float(sumation) * int(weight) * float(tothours + (totmins/60))
-            
-            return render (request , 'met_report.html', {'met':float(sumation), 'cals':int(cals), 'bmr':int(mybmr), 'weekmet':float(weeksum), 'remmet':float(remmet)})
+            return render (request , 'met_report.html', {'indiv':indiv, 'met':float(sumation), 'cals':float(total_cals), 'bmr':int(mybmr), 'weekmet':float(weeksum), 'remmet':float(remmet)})
         else:
             pdb.set_trace()
             return render (request , 'error_met.html')

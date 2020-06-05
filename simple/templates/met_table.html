@@ -53,7 +53,7 @@ Height(in inches):<input type="number" name="height" id="height" min="1" require
     <tbody>
     <tr>
         <td>
-	<select name="activity" id="activity"><option type="number" value="7.5">cycling</option><option type="number" value="6">jogging</option><option type="number" value="8">running</option><option type="number" value="4">housing</option><option type="number" value="11">skipping</option><option type="number" value="5">walking</option><option type="number" value="3">pilates</option><option type="number" value="5">weights</option></select>
+	<select name="activity" id="activity"><option type="number" value="cycling|7.5">cycling[MET="7.5"]</option><option type="number" value="jogging|6">jogging[MET="6"]</option><option type="number" value="running|8">running[MET="8"]</option><option type="number" value="housing|4">housing[MET="4"]</option><option type="number" value="skipping|11">skipping[MET="11"]</option><option type="number" value="walking|5">walking[MET="5"]</option><option type="number" value="pilates|3">pilates[MET="3"]</option><option type="number" value="weights|5">weights[MET="5"]</option></select>
 	</td>
         <td>
 	<select name="level" id="level"><option int="number" value="0.01">light</option><option int="number" value="0.02">moderate</option><option int="number" value="0.03">heavy</option></select>
@@ -77,7 +77,7 @@ function myFunction() {
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(2);
   var cell4 = row.insertCell(3);
-  cell1.innerHTML = '<select name="activity" id="activity"><option type="number" value="7.5">cycling</option><option type="number" value="6">jogging</option><option type="number" value="8">running</option><option type="number" value="4">housing</option><option type="number" value="11">skipping</option><option type="number" value="5">walking</option><option type="number" value="3">pilates</option><option type="number" value="5">weights</option></select>';
+  cell1.innerHTML = '<select name="activity" id="activity"><option type="number" value="cycling|7.5">cycling[MET="7.5"]</option><option type="number" value="jogging|6">jogging[MET="6"]</option><option type="number" value="running|8">running[MET="8"]</option><option type="number" value="housing|4">housing[MET="4"]</option><option type="number" value="skipping|11">skipping[MET="11"]</option><option type="number" value="walking|5">walking[MET="5"]</option><option type="number" value="pilates|3">pilates[MET="3"]</option><option type="number" value="weights|5">weights[MET="5"]</option></select>';
   cell2.innerHTML = '<select name="level" id="level"><option int="number" value="0.01">light</option><option int="number" value="0.02">moderate</option><option int="number" value="0.03">heavy</option></select>';
   cell3.innerHTML = '<input type="number" name="hours" id="hours"  required="required" min="0"/>';
   cell4.innerHTML = '<input type="number" name="minutes" id="minutes" min="0" required="required"/>';

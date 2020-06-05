@@ -434,3 +434,89 @@ Quit the server with CONTROL-C.
 90
 90
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+[04/Jun/2020 19:40:22] "GET /calculator/ HTTP/1.1" 200 3773
+[04/Jun/2020 19:43:01] "GET /calculator/ HTTP/1.1" 200 3773
+[04/Jun/2020 19:55:49] "GET /calculator/ HTTP/1.1" 200 3773
+[04/Jun/2020 19:55:50] "GET /static/css/style2.css HTTP/1.1" 200 1025
+[04/Jun/2020 19:55:51] "GET /static/images/met2.jpg HTTP/1.1" 200 157171
+[04/Jun/2020 19:56:38] "POST /calculator/ HTTP/1.1" 200 2995
+Invalid HTTP_HOST header: 'ip-172-31-24-200.us-west-1.compute.internal:5000'. You may need to add 'ip-172-31-24-200.us-west-1.compute.internal' to ALLOWED_HOSTS.
+Bad Request: /
+[05/Jun/2020 00:12:32] "GET / HTTP/1.0" 400 62243
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 138, in run
+    self.finish_response()
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 180, in finish_response
+    self.write(data)
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 279, in write
+    self._write(data)
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 453, in _write
+    result = self.stdout.write(data)
+  File "/usr/lib/python3.6/socketserver.py", line 803, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+[05/Jun/2020 00:12:32] "GET / HTTP/1.0" 500 59
+----------------------------------------
+Exception happened during processing of request from ('209.17.96.42', 50291)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 138, in run
+    self.finish_response()
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 180, in finish_response
+    self.write(data)
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 279, in write
+    self._write(data)
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 453, in _write
+    result = self.stdout.write(data)
+  File "/usr/lib/python3.6/socketserver.py", line 803, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 141, in run
+    self.handle_error()
+  File "/usr/lib/python3.6/site-packages/django/core/servers/basehttp.py", line 119, in handle_error
+    super().handle_error()
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 368, in handle_error
+    self.finish_response()
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 180, in finish_response
+    self.write(data)
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 274, in write
+    self.send_headers()
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 331, in send_headers
+    if not self.origin_server or self.client_is_modern():
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 344, in client_is_modern
+    return self.environ['SERVER_PROTOCOL'].upper() != 'HTTP/0.9'
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/socketserver.py", line 654, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.6/socketserver.py", line 364, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.6/socketserver.py", line 724, in __init__
+    self.handle()
+  File "/usr/lib/python3.6/site-packages/django/core/servers/basehttp.py", line 172, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.6/site-packages/django/core/servers/basehttp.py", line 197, in handle_one_request
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.6/wsgiref/handlers.py", line 144, in run
+    self.close()
+  File "/usr/lib/python3.6/site-packages/django/core/servers/basehttp.py", line 114, in close
+    super().close()
+  File "/usr/lib/python3.6/wsgiref/simple_server.py", line 35, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+----------------------------------------
+Not Found: /
+[05/Jun/2020 02:38:12] "GET / HTTP/1.1" 404 2563
+Not Found: /favicon.ico
+[05/Jun/2020 04:40:29] "GET /favicon.ico HTTP/1.1" 404 2614
+[05/Jun/2020 04:40:30] "GET /bmr/ HTTP/1.1" 200 1671
+Not Found: /favicon.ico
+[05/Jun/2020 04:40:30] "GET /favicon.ico HTTP/1.1" 404 2614
+Watching for file changes with StatReloader
