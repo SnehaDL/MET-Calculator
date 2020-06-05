@@ -588,3 +588,5 @@ Quit the server with CONTROL-C.
 pilates|3 0.01 0 30
 90
 90
+Watching for file changes with StatReloader
+[05/Jun/2020 09:24:25] "GET /calculator/ HTTP/1.1" 200 4053
