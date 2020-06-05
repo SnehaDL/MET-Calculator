@@ -77,7 +77,12 @@ def calc(request):
                 print(act_dict['activity'][value], float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
                 mymet = metvalue(float(act_dict['activity'][value].split('|')[1]), float(act_dict['level'][value]), int(act_dict['hours'][value]), int(act_dict['minutes'][value]))
                 print(mymet)
-                indiv_cals = float(mymet) * int(weight) * float(int(act_dict['hours'][value]) + (int(act_dict['minutes'][value])/60))
+                weight_in_kgs = (float(weight) * 0.45359237)
+                print("calories calulations")
+                print(float(act_dict['activity'][value].split('|')[1]))
+                print(int(weight_in_kgs))
+                mins = float(int(act_dict['hours'][value]) + (int(act_dict['minutes'][value])/60))
+                indiv_cals = float(act_dict['activity'][value].split('|')[1]) * int(weight_in_kgs) * mins
                 total_cals += indiv_cals
                 indivl= [act_dict['activity'][value].split('|')[0],int(act_dict['hours'][value]),int(act_dict['minutes'][value]),float(mymet),indiv_cals]
                 indiv.append(indivl)

@@ -520,3 +520,71 @@ Not Found: /favicon.ico
 Not Found: /favicon.ico
 [05/Jun/2020 04:40:30] "GET /favicon.ico HTTP/1.1" 404 2614
 Watching for file changes with StatReloader
+[05/Jun/2020 08:25:32] "GET /calculator/ HTTP/1.1" 200 4053
+[05/Jun/2020 08:37:33] "GET /calculator/ HTTP/1.1" 200 4053
+[05/Jun/2020 08:37:33] "GET /static/css/style2.css HTTP/1.1" 304 0
+[05/Jun/2020 08:37:34] "GET /static/images/met2.jpg HTTP/1.1" 304 0
+[05/Jun/2020 08:38:15] "POST /calculator/ HTTP/1.1" 200 3961
+[05/Jun/2020 08:50:54] "POST /calculator/ HTTP/1.1" 200 3962
+[05/Jun/2020 08:54:15] "GET /calculator/ HTTP/1.1" 200 4053
+/home/ubuntu/work/MET-Calculator/simple/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 4 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth.
+Run 'python manage.py migrate' to apply them.
+June 05, 2020 - 08:24:40
+Django version 3.0.6, using settings 'met.settings'
+Starting development server at http://0.0.0.0:5000/
+Quit the server with CONTROL-C.
+cycling|7.5 0.01 0 58
+435
+435
+cycling|7.5 0.01 0 58
+435
+435
+Watching for file changes with StatReloader
+[05/Jun/2020 08:59:13] "GET /calculator/ HTTP/1.1" 200 4053
+Internal Server Error: /calculator/
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/work/MET-Calculator/simple/views.py", line 80, in calc
+    weight_in_kgs = float(weight * 0.45359237)
+TypeError: can't multiply sequence by non-int of type 'float'
+[05/Jun/2020 09:00:27] "POST /calculator/ HTTP/1.1" 500 71197
+/home/ubuntu/work/MET-Calculator/simple/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 4 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth.
+Run 'python manage.py migrate' to apply them.
+June 05, 2020 - 08:58:59
+Django version 3.0.6, using settings 'met.settings'
+Starting development server at http://0.0.0.0:5000/
+Quit the server with CONTROL-C.
+pilates|3 0.01 0 30
+90
+Watching for file changes with StatReloader
+[05/Jun/2020 09:01:35] "GET /calculator/ HTTP/1.1" 200 4053
+[05/Jun/2020 09:01:49] "POST /calculator/ HTTP/1.1" 200 3960
+/home/ubuntu/work/MET-Calculator/simple/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 4 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth.
+Run 'python manage.py migrate' to apply them.
+June 05, 2020 - 09:01:31
+Django version 3.0.6, using settings 'met.settings'
+Starting development server at http://0.0.0.0:5000/
+Quit the server with CONTROL-C.
+pilates|3 0.01 0 30
+90
+90
